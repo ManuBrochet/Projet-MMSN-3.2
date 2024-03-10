@@ -7,7 +7,7 @@ double multiplication(double x, double z)
 {
     int i;
     double y0, y1=0, eps=1e-5;
-    for (i=1; i<=NMAX; i++)
+    for (i=0; i<NMAX; i++)
     {
         y0 = y1;
         if (z<0)
@@ -22,6 +22,7 @@ double multiplication(double x, double z)
         }
         if (fabs(y0-y1)<eps)
         {
+            printf("it : %d \n", i);
             return y1;
         }
         printf("Ceci est y %lf \n", y1);
@@ -35,7 +36,7 @@ double division(double y, double x)
 {
     int i;
     double eps=1e-5, z0, z1=0;
-    for (i=1; i<=NMAX; i++)
+    for (i=0; i<NMAX; i++)
     {
         z0=z1;
         if (y>0)
@@ -50,6 +51,7 @@ double division(double y, double x)
         }
         if(fabs(z0-z1)<eps)
         {
+            printf("it : %d \n", i);
             return z1;
         }
         printf("Ceci est y %lf \n", y);
